@@ -11,37 +11,101 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Select the traffic Lights"
+        android:textSize="30dp"
         android:layout_marginTop="30dp"
         android:gravity="center"
         />
-     <GridLayout
-    android:id="@+id/collImages"
-    android:layout_width="300dp"
-    android:layout_height="300dp"
-    android:layout_marginTop="30dp"
-    android:layout_marginLeft="50dp"
-    android:layout_marginRight="50dp"
-    android:columnCount="3"
-    android:rowCount="3">
 
-     </GridLayout>
+    <GridLayout
+        android:id="@+id/collImages"
+        android:layout_width="263dp"
+        android:layout_height="273dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="50dp"
+        android:columnCount="3"
+        android:rowCount="3">
+
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/img1"/>
+
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/img2"/>
+
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/img3"/>
+
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/img4"/>
+
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/img5"/>
+
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/img6"/>
+
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/img7"/>
+
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/img8"/>
+
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/img9"/>
+
+
+    </GridLayout>
+
+      <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <CheckBox
         android:id="@+id/Check"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="I'm not robot"
+        android:textStyle="bold"
         android:layout_marginTop="50dp"
         android:layout_marginLeft="30dp"
         android:textSize="20dp"/>
 
-    <ImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="50dp"
-        android:src="@drawable/refresh"/>
+          <ImageView
+              android:layout_width="40dp"
+              android:layout_height="40dp"
+              android:layout_marginLeft="150dp"
+              android:layout_marginTop="50dp"
+              android:src="@drawable/refresh" />
 
 
+      </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Verify"
+        android:background="@color/colorPrimary"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="20dp"/>
 
 
 </LinearLayout>
