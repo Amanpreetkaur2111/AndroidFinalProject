@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Verify">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select the traffic Lights"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        />
+     <GridLayout
+    android:id="@+id/collImages"
+    android:layout_width="300dp"
+    android:layout_height="300dp"
+    android:layout_marginTop="30dp"
+    android:layout_marginLeft="50dp"
+    android:layout_marginRight="50dp"
+    android:columnCount="3"
+    android:rowCount="3">
+
+     </GridLayout>
+
+    <CheckBox
+        android:id="@+id/Check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="I'm not robot"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="30dp"
+        android:textSize="20dp"/>
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="50dp"
+        android:src="@drawable/refresh"/>
+
+
+
+
+</LinearLayout>

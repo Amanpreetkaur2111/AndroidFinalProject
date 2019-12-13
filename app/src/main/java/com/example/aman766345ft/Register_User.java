@@ -37,14 +37,15 @@ public class Register_User extends AppCompatActivity  {
 
 
 
+
             @Override
             public void onClick(View view) {
                 if (!n_text.getText().toString().isEmpty() & e_text.getText().toString().isEmpty() & p_text.getText().toString().isEmpty()){
-
                     DataofUser data = new DataofUser(n_text.getText().toString(),e_text.getText().toString(),p_text.getText().toString());
                     Toast.makeText(Register_User.this,"Saved Successfully",Toast.LENGTH_SHORT).show();
                 }
-                else{
+                else
+                    {
                     Toast.makeText(Register_User.this,"All the fields are Mandatory",Toast.LENGTH_SHORT).show();
                 }
 

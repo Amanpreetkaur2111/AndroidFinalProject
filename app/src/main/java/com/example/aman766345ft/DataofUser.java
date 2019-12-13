@@ -10,9 +10,9 @@ public class DataofUser  {
     public String StorePhone;
 
     public DataofUser(String storeName, String storeEmail, String storePhone) {
-        StoreName = storeName;
-        StoreEmail = storeEmail;
-        StorePhone =  storePhone;
+        this.StoreName = storeName;
+        this.StoreEmail = storeEmail;
+        this.StorePhone =  storePhone;
     }
 
 public static ArrayList<String> DetailsofUser = new ArrayList<>();
