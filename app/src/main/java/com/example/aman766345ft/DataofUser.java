@@ -20,7 +20,19 @@ public class DataofUser  {
         this.StorePhone =  storePhone;
     }
 
-public static ArrayList<DataofUser> DetailsofUser = new ArrayList<>();
+    public String getStoreName() {
+        return StoreName;
+    }
+
+    public String getStoreEmail() {
+        return StoreEmail;
+    }
+
+    public String getStorePhone() {
+        return StorePhone;
+    }
+
+    public static ArrayList<DataofUser> DetailsofUser = new ArrayList<>();
 
 
 
