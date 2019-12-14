@@ -2,6 +2,7 @@ package com.example.aman766345ft;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,6 +14,7 @@ public class Verify extends AppCompatActivity {
 
     GridView gridview;
     Button verify;
+    ImageView refresh;
 
     int[] trafficimages = {R.drawable.img1,R.drawable.img2,R.drawable.img3,R.drawable.img4,R.drawable.img5,R.drawable.img6,R.drawable.img7,R.drawable.img8,R.drawable.img9};
 
@@ -31,9 +33,11 @@ public class Verify extends AppCompatActivity {
 
         gridview = findViewById(R.id.collImages);
         verify = findViewById(R.id.verified);
+        refresh = findViewById(R.id.refresh);
 
         final TrafficLights trafficlights = new TrafficLights(this,trafficimages);
         gridview.setAdapter(trafficlights);
+
 
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -47,6 +51,16 @@ public class Verify extends AppCompatActivity {
         verify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(Verify.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+/*
+        verify.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
                 for (int i = trafficimages.length ; i > 5; i--){
 
@@ -55,11 +69,13 @@ public class Verify extends AppCompatActivity {
                     trafficimages[i-1] = simage;
 
                 }
+
                 gridview.setAdapter(trafficlights);
                 trafficlights.notifyDataSetChanged();
 
             }
         });
+*/
     }
 
 }

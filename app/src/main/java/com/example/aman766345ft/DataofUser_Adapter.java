@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.util.List;
+import java.util.Random;
 
 public class DataofUser_Adapter extends ArrayAdapter {
 
@@ -43,10 +44,19 @@ public class DataofUser_Adapter extends ArrayAdapter {
         TextView TV2 = v.findViewById(R.id.textView3);
         TextView Tv3 = v.findViewById(R.id.textView4);
 
-        TV1.setText(Users.get(position).textView2);
-        TV2.setText(Users.get(position).textView3);
-        Tv3.setText(Users.get(position).textView4);
 
         return v;
+    }
+
+
+    static int[] shuffleImages(int[] arrayListofImages){
+        Random random = new Random();
+        for (int i = 0; i< 5; i++){
+
+            int index = random.nextInt(5);
+            int check = arrayListofImages[index];
+            arrayListofImages[i] = check;
+        }
+        return arrayListofImages;
     }
 }

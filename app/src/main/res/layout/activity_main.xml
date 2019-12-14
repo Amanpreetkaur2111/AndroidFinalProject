@@ -8,10 +8,10 @@
     tools:context=".MainActivity">
 
     <fragment
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/profile"
-        android:name="com.example.aman766345ft.AddProfile"/>
+        android:name="com.example.aman766345ft.AddProfile"
+        android:layout_width="match_parent"
+        android:layout_height="489dp" />
 
 
 </LinearLayout>

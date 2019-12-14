@@ -8,19 +8,18 @@
 
     <!-- TODO: Update blank fragment layout -->
     <ListView
+        android:id="@+id/ListUsers"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/ListUsers"/>
+        android:layout_height="300dp" />
 
     <Button
         android:id="@+id/AddBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add User"
-        android:layout_marginTop="500dp"
-        android:layout_marginRight="40dp"
         android:layout_marginLeft="40dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="40dp"
         android:background="@color/colorPrimary"
-        />
+        android:text="Add User" />
 
 </LinearLayout>

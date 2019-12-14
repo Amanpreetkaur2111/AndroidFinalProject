@@ -7,9 +7,11 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.EventLogTags;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -21,14 +23,17 @@ import android.widget.ListView;
 interface Listener{
     void onItemClick(int id);
 }
-public class AddProfile extends Fragment {
+public class AddProfile extends Fragment  {
 
     private Listener listener;
 
-   public Context context;
+//   public Context context;
 
-
-
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        this.listener = (Listener) context;
+    }
 
     public AddProfile() {
         // Required empty public constructor
@@ -41,19 +46,26 @@ public class AddProfile extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-
-
-        // Inflate the layout for this fragment
-       // View view = inflater.inflate(R.layout.fragment_add_profile,container,false);
-      //  Button Add;
-       // ListView listView;
-       // listView = view.findViewById(R.id.ListUsers);
-       // if (!DataofUser.DetailsofUser.isEmpty()){
-        //    String[] name = new String[DataofUser.DetailsofUser.]
-       // }
-        this.context = inflater.getContext();
-        return inflater.inflate(R.layout.fragment_add_profile, container, false);
+        View view = inflater.inflate(R.layout.fragment_add_profile,container,false);
+//       View view = getView();
+//       Button Add;
+//       ListView listView;
+//       listView = view.findViewById(R.id.ListUsers);
+//       if (!DataofUser.DetailsofUser.isEmpty()) {
+//           DataofUser_Adapter dataofUser = new DataofUser_Adapter(inflater.getContext(), R.layout.activity_after_verification, DataofUser.DetailsofUser);
+//           listView.setAdapter(dataofUser);
+//           listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//                        @Override
+//                        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                           if(listener != null)
+//                                listener.onItemClick(i);
+//
+//                        }
+//                    });
+//
+//
+//        }
+       return view;
 
     }
 
@@ -62,20 +74,38 @@ public class AddProfile extends Fragment {
         super.onStart();
         View view = getView();
 
-        if (view != null){
-
+        Button Add;
+        ListView listView;
+        if(view !=  null){
+        listView = view.findViewById(R.id.ListUsers);
             Button addButton = view.findViewById(R.id.AddBtn);
-            addButton.setOnClickListener(new View.OnClickListener() {
+            DataofUser_Adapter dataofUser = new DataofUser_Adapter(getContext(), R.layout.activity_after_verification, DataofUser.DetailsofUser);
+            listView.setAdapter(dataofUser);
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(context,Register_User.class);
-                    startActivity(intent);
+                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                    if (listener != null)
+                        listener.onItemClick(i);
 
                 }
             });
 
 
+
+                addButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(getContext(), Register_User.class);
+                        startActivity(intent);
+
+                    }
+                });
+
+
+            }
+
         }
 
+
     }
-}
+
