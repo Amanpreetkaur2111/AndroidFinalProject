@@ -35,12 +35,13 @@ public void displayDetails(int id){
             TextView text_view  = view.findViewById(R.id.dName);
             TextView text_view2 = view.findViewById(R.id.dEmail);
             TextView text_view3 = view.findViewById(R.id.dPhone);
+
             DataofUser dataofUser = DataofUser.DetailsofUser.get(id);
 
             text_view.setText(dataofUser.getStoreName());
             text_view2.setText(dataofUser.getStoreEmail());
             text_view3.setText(dataofUser.getStorePhone());
-            image_view.setImageResource(R.drawable.icon01_01);
+             image_view.setImageResource(R.drawable.icon01_01);
 
         }
 }
@@ -50,5 +51,7 @@ public void displayDetails(int id){
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_description_, container, false);
     }
+
+
 
 }

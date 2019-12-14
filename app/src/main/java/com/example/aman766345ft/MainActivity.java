@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity implements Listener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       View detailView = findViewById(R.id.profile);
+       View detailView = findViewById(R.id.Des_profile);
       mIsDualPane = detailView != null && detailView.getVisibility() == View.VISIBLE;
     }
 
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements Listener {
 
       if(mIsDualPane) {
 
-           Description_Fragment description_fragment = (Description_Fragment) getSupportFragmentManager().findFragmentById(R.id.profile);
+           Description_Fragment description_fragment = (Description_Fragment) getSupportFragmentManager().findFragmentById(R.id.Des_profile);
            description_fragment.displayDetails(id);
       }
        else{

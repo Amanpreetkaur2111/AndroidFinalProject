@@ -39,10 +39,16 @@ public class DataofUser_Adapter extends ArrayAdapter {
         View v = convertView;
         if(v == null)
             v = layoutInflater.inflate(layoutResource,parent,false);
-        ImageView IV = v.findViewById(R.id.image_view);
+        ImageView IV = v.findViewById(R.id.imageView);
         TextView TV1 = v.findViewById(R.id.textView2);
         TextView TV2 = v.findViewById(R.id.textView3);
         TextView Tv3 = v.findViewById(R.id.textView4);
+
+
+        TV1.setText(Users.get(position).getStoreName());
+        TV2.setText(Users.get(position).getStoreEmail());
+        Tv3.setText(Users.get(position).getStorePhone());
+        IV.setImageResource(R.drawable.icon01_01);
 
 
         return v;

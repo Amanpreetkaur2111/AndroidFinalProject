@@ -43,13 +43,13 @@
         android:layout_marginLeft="30dp"
         android:textSize="20dp"/>
 
-          <ImageView
+          <ImageButton
               android:id="@+id/refresh"
               android:layout_width="40dp"
               android:layout_height="40dp"
               android:layout_marginLeft="150dp"
               android:layout_marginTop="50dp"
-              android:onClick="refresh"
+              android:scaleType="centerCrop"
               android:src="@drawable/refresh" />
 
 

@@ -7,14 +7,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
+
+import java.util.Random;
 
 public class Verify extends AppCompatActivity {
 
     GridView gridview;
     Button verify;
-    ImageView refresh;
+    ImageButton refresh;
+
 
     int[] trafficimages = {R.drawable.img1,R.drawable.img2,R.drawable.img3,R.drawable.img4,R.drawable.img5,R.drawable.img6,R.drawable.img7,R.drawable.img8,R.drawable.img9};
 
@@ -35,6 +41,7 @@ public class Verify extends AppCompatActivity {
         verify = findViewById(R.id.verified);
         refresh = findViewById(R.id.refresh);
 
+
         final TrafficLights trafficlights = new TrafficLights(this,trafficimages);
         gridview.setAdapter(trafficlights);
 
@@ -47,34 +54,43 @@ public class Verify extends AppCompatActivity {
             }
         });
 
-
-        verify.setOnClickListener(new View.OnClickListener() {
+        Button btn = findViewById(R.id.verified);
+        final CheckBox checkBox = findViewById(R.id.Check);
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Verify.this,MainActivity.class);
-                startActivity(intent);
+                if(checkBox.isChecked()){
+                    Intent intent = new Intent(Verify.this,MainActivity.class);
+                    startActivity(intent);
+                }
+                else Toast.makeText(Verify.this,"please check the checked button",Toast.LENGTH_SHORT).show();
             }
         });
 
-
-/*
-        verify.setOnClickListener(new View.OnClickListener() {
+        refresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                for (int i = trafficimages.length ; i > 5; i--){
-
-                    int simage = trafficimages[i];
-                    trafficimages[i] = trafficimages[i-1];
-                    trafficimages[i-1] = simage;
+                gridview.setAdapter(trafficlights);
+                int index, temp;
+                Random random = new Random();
+                for(int i = trafficimages.length - 1 ; i>0;i--){
+                    index = random.nextInt(i+1);
+                    temp = trafficimages[index];
+                    trafficimages[index] = trafficimages[i];
+                    trafficimages[i] = temp;
 
                 }
 
-                gridview.setAdapter(trafficlights);
-                trafficlights.notifyDataSetChanged();
+                gridview.deferNotifyDataSetChanged();
 
             }
         });
+
+
+
+/*
+
 */
     }
 

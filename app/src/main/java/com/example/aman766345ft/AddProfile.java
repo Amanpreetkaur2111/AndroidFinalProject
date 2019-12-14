@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 
 /**
@@ -75,18 +76,28 @@ public class AddProfile extends Fragment  {
         View view = getView();
 
         Button Add;
-        ListView listView;
+        final ListView listView;
         if(view !=  null){
         listView = view.findViewById(R.id.ListUsers);
             Button addButton = view.findViewById(R.id.AddBtn);
             DataofUser_Adapter dataofUser = new DataofUser_Adapter(getContext(), R.layout.activity_after_verification, DataofUser.DetailsofUser);
             listView.setAdapter(dataofUser);
+//            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//                @Override
+//                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                    if (listener != null)
+//                        listener.onItemClick(i);
+//                    System.out.printf("hello java");
+//
+//                }
+//            });
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                    if (listener != null)
+                    Toast.makeText(getContext(), "hi", Toast.LENGTH_SHORT).show();
+                    if(listener != null){
                         listener.onItemClick(i);
-
+                    }
                 }
             });
 
