@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 
@@ -22,7 +23,6 @@ public class AddProfile extends Fragment {
 
     public Context context;
 
-
     public AddProfile() {
         // Required empty public constructor
     }
@@ -31,9 +31,11 @@ public class AddProfile extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         this.context = inflater.getContext();
         return inflater.inflate(R.layout.fragment_add_profile, container, false);
+
     }
 
     @Override

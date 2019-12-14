@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Verify"></activity>
+        <activity android:name=".AfterVerification"></activity>
+        <activity android:name=".Verify" />
         <activity android:name=".Description_Activity" />
         <activity android:name=".Register_User" />
         <activity android:name=".MainActivity">

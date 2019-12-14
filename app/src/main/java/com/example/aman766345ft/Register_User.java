@@ -40,9 +40,16 @@ public class Register_User extends AppCompatActivity  {
 
             @Override
             public void onClick(View view) {
-                if (!n_text.getText().toString().isEmpty() & e_text.getText().toString().isEmpty() & p_text.getText().toString().isEmpty()){
+                if (!n_text.getText().toString().isEmpty() & !e_text.getText().toString().isEmpty() & !p_text.getText().toString().isEmpty()){
+
                     DataofUser data = new DataofUser(n_text.getText().toString(),e_text.getText().toString(),p_text.getText().toString());
-                    Toast.makeText(Register_User.this,"Saved Successfully",Toast.LENGTH_SHORT).show();
+                    DataofUser.DetailsofUser.add(data);
+
+                    Intent intent = new Intent(Register_User.this,Verify.class);
+                    startActivity(intent);
+
+
+                    //Toast.makeText(Register_User.this,"Saved Successfully",Toast.LENGTH_SHORT).show();
                 }
                 else
                     {
