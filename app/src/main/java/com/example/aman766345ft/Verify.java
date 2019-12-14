@@ -72,13 +72,13 @@ public class Verify extends AppCompatActivity {
             public void onClick(View view) {
 
                 gridview.setAdapter(trafficlights);
-                int index, temp;
+                int index, temporary;
                 Random random = new Random();
                 for(int i = trafficimages.length - 1 ; i>0;i--){
                     index = random.nextInt(i+1);
-                    temp = trafficimages[index];
+                    temporary = trafficimages[index];
                     trafficimages[index] = trafficimages[i];
-                    trafficimages[i] = temp;
+                    trafficimages[i] = temporary;
 
                 }
 

@@ -44,12 +44,12 @@ public class Register_User extends AppCompatActivity  {
 
                     DataofUser data = new DataofUser(n_text.getText().toString(),e_text.getText().toString(),p_text.getText().toString());
                     DataofUser.DetailsofUser.add(data);
-
+                    Toast.makeText(Register_User.this, "Next Added User"+DataofUser.DetailsofUser, Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(Register_User.this,Verify.class);
                     startActivity(intent);
 
 
-                    //Toast.makeText(Register_User.this,"Saved Successfully",Toast.LENGTH_SHORT).show();
+
                 }
                 else
                     {
